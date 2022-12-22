@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
 BUILD_DIR=${1:-}
-if yarn --version > /dev/null 2>&1; then
-  cd "$BUILD_DIR" && yarn test:e2e:ci
-else
-  cd "$BUILD_DIR" && npm test:e2e:ci
-fi
+
+cd "$BUILD_DIR" && quasar test --e2e cypress
